@@ -36,4 +36,12 @@ public class ExampleInstrumentedTest {
     public void userAbleToEnterFirstName(){
         Espresso.onView(withId(R.id.firstName)).perform(typeText("NAncy"));
     }
+    @Test
+    public void checkIfFirstNAmeIsValid(){
+        assertFalse(MainActivity.isValidName("name@email"));
+    }
+    @Test
+    public void checkIfLastNAmeIsValid(){
+        assertTrue(MainActivity.isValidName("namemail"));
+    }
 }
